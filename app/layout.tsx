@@ -4,7 +4,6 @@ import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
-//TODO: Fix favicon not showing
 export const metadata: Metadata = {
   title: "Flicked",
   description: "Find your next watch",

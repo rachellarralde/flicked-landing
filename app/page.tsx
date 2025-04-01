@@ -1,16 +1,17 @@
-'use client'
+"use client";
 
-import React, { useRef } from 'react';
-import NavBar from '../components/nav-bar';
-import Hero from '../components/hero';
-import FeatureCards from '../components/feature-cards';
-import Contact from '../components/contact';
+import React, { useRef } from "react";
+import NavBar from "../components/nav-bar";
+import Hero from "../components/hero";
+import FeatureCards from "../components/feature-cards";
+import Contact from "../components/contact";
+import PrivacyPolicy from "../components/privacy-policy";
 
 export default function Home() {
   const contactRef = useRef<HTMLDivElement>(null);
 
   const scrollToContact = () => {
-    contactRef.current?.scrollIntoView({ behavior: 'smooth' });
+    contactRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -22,6 +23,7 @@ export default function Home() {
         <div ref={contactRef}>
           <Contact />
         </div>
+        <PrivacyPolicy />
       </div>
     </main>
   );
