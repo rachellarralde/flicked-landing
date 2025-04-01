@@ -23,7 +23,6 @@ export default function Home() {
         <div ref={contactRef}>
           <Contact />
         </div>
-        <PrivacyPolicy />
       </div>
     </main>
   );
