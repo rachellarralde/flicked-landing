@@ -14,10 +14,10 @@ export default function Component() {
           <div className="space-y-2">
             <h3 className="text-lg font-bold">Contact Us</h3>
             <p className="text-sm text-gray-500 dark:text-gray-400">
-              Have a question or feature requests? Fill out the form below and we&apos;ll get back to you as soon as possible.
+              Have a question or feature requests? Fill email witchaudiostudios@gmail.com and we&apos;ll get back to you as soon as possible.
             </p>
           </div>
-          <div className="space-y-4">
+          {/* <div className="space-y-4">
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-2">
                 <Label htmlFor="name">Name</Label>
@@ -33,7 +33,7 @@ export default function Component() {
               <Textarea className="min-h-[100px]" id="message" placeholder="Enter your message" />
             </div>
             <Button className="bg-white text-gray-900 hover:bg-gray-100 focus:ring-4 focus:ring-gray-300">Send Message</Button>
-          </div>
+          </div> */}
         </div>
       </div>
     </footer>
