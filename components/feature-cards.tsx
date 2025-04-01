@@ -25,7 +25,7 @@ export default function FeatureCards(): JSX.Element {
           <div className="backdrop-blur-xl bg-white/10 border border-white/20 p-6 rounded-xl shadow-[0_8px_32px_rgba(0,0,0,0.12)] transition-all duration-300 hover:bg-white/20 hover:scale-[1.02]">
             <h3 className="text-xl font-semibold mb-3">Endless scrolling ❌</h3>
             <p className="text-sm text-gray-300">
-              Unsure of what to watch? We'll recommend the best with our
+              Unsure of what to watch? We&apos;ll recommend the best with our
               Roulette feature.
             </p>
           </div>
