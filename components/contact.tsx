@@ -17,9 +17,8 @@ export default function Component() {
           <div className="space-y-2">
             <h3 className="text-lg font-bold">Contact Us</h3>
             <p className="text-sm text-gray-500 dark:text-gray-400">
-              Have a question or feature requests? Fill email
-              witchaudiostudios@gmail.com and we&apos;ll get back to you as soon
-              as possible.
+              Have a question or feature requests? Email
+              witchaudiostudios@gmail.com and we&apos;ll get back to you.
             </p>
           </div>
           <div className="space-y-2">
@@ -32,7 +31,7 @@ export default function Component() {
               >
                 Privacy Policy
               </a>{" "}
-              to learn more about how we handle your information.
+              to learn more.
             </p>
           </div>
         </div>

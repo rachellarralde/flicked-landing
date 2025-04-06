@@ -14,8 +14,8 @@ export default function Hero() {
           </div>
           <div className="flex flex-col items-start space-y-4">
             <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400">
-              Beautifully designed. Completely free. Save your favorite shows
-              and movies to watch later.
+              Stop scrolling. Start watching. Discover your favorite shows and
+              movies.
             </p>
             <div className="space-x-4">
               <Link
@@ -30,7 +30,7 @@ export default function Hero() {
         <Image
           alt="Main Image"
           className="mx-auto rounded-t-xl object-cover w-full"
-          src="/hero-image.png"
+          src="/hero-image.jpg"
           layout="responsive"
           width={1200}
           height={400}
