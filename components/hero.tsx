@@ -23,7 +23,7 @@ export default function Hero() {
             Your next obsession is a tap away.
           </h1>
           <p className="max-w-xl text-base text-white/70 sm:text-lg">
-            Flicked cuts through endless catalogs with a sleek experience inspired by the streaming giants you love. Swipe through cinematic recommendations, build gorgeous playlists, and dive in instantly.
+            GetFlicked cuts through endless catalogs with a sleek experience. Swipe through cinematic recommendations, build gorgeous playlists, and dive in instantly.
           </p>
           <ul className="grid gap-3 text-sm text-white/60 sm:text-base">
             {featureBullets.map((bullet) => (
@@ -37,14 +37,22 @@ export default function Hero() {
           </ul>
           <div className="flex flex-wrap items-center gap-4 pt-2">
             <Link
-              className="group inline-flex h-14 items-center gap-4 rounded-full bg-white px-6 text-base font-semibold text-black shadow-[0_20px_50px_-30px_rgba(0,0,0,1)] transition-transform duration-300 hover:-translate-y-0.5 hover:bg-white/90"
+              className="group relative inline-flex h-14 items-center gap-4 overflow-hidden rounded-full border border-white/15 bg-white/95 px-6 text-base font-semibold text-black shadow-[0_20px_50px_-30px_rgba(0,0,0,1)] transition-transform duration-300 hover:-translate-y-0.5 hover:bg-white"
               href="https://apps.apple.com/us/app/its-flicked/id6744044275"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <div className="flex items-center gap-3">
+              <span
+                aria-hidden
+                className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(122,98,255,0.28),transparent_65%)] opacity-70 transition-opacity duration-500 group-hover:opacity-100"
+              />
+              <span
+                aria-hidden
+                className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,rgba(255,78,80,0.2),transparent_60%)] opacity-0 transition-opacity duration-500 group-hover:opacity-80"
+              />
+              <div className="relative z-10 flex items-center gap-3">
                 <div className="relative h-9 w-9 overflow-hidden rounded-2xl bg-black/80">
-                  <Image src="/app-icon.png" alt="Flicked icon" fill className="object-cover" />
+                  <Image src="/app-icon.png" alt="GetFlicked icon" fill className="object-cover" />
                 </div>
                 <span>Download on the App Store</span>
               </div>
@@ -54,7 +62,7 @@ export default function Hero() {
                 fill="none"
                 stroke="currentColor"
                 strokeWidth="1.8"
-                className="h-5 w-5 text-black/70 transition-transform duration-300 group-hover:translate-x-1"
+                className="relative z-10 h-5 w-5 text-black/70 transition-transform duration-300 group-hover:translate-x-1"
               >
                 <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M13 6l6 6-6 6" />
               </svg>
@@ -64,31 +72,19 @@ export default function Hero() {
             </p>
           </div>
         </div>
-        <div className="relative mx-auto flex max-w-[28rem] items-center justify-center">
-          <div className="absolute inset-0 rounded-[3rem] border border-white/10 bg-white/5 blur-xl" />
-          <div className="relative w-full overflow-hidden rounded-[2.5rem] border border-white/15 bg-black/70 p-5 shadow-[0_45px_80px_-40px_rgba(0,0,0,0.8)]">
+        <div className="relative mx-auto flex max-w-[32rem] items-center justify-center lg:max-w-[36rem]">
+          <div className="absolute inset-0 rounded-[3.25rem] border border-white/10 bg-white/5 blur-xl" />
+          <div className="relative w-full overflow-hidden rounded-[2.75rem] border border-white/15 bg-black/70 p-6 shadow-[0_55px_90px_-45px_rgba(0,0,0,0.85)]">
             <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-black/40">
               <Image
                 src="/hero-image.png"
-                alt="Flicked app preview"
+                alt="GetFlicked app preview"
                 width={900}
                 height={1200}
                 className="h-full w-full object-cover"
                 priority
               />
               <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
-            </div>
-            <div className="absolute -right-12 top-1/2 hidden w-36 -translate-y-1/2 rotate-[8deg] animate-float overflow-hidden rounded-3xl border border-white/15 bg-white/5 p-4 shadow-[0_30px_50px_-20px_rgba(255,255,255,0.12)] lg:block">
-              <Image
-                src="/roulette.png"
-                alt="Roulette feature"
-                width={400}
-                height={400}
-                className="rounded-2xl object-cover"
-              />
-              <p className="mt-3 text-xs font-semibold uppercase tracking-[0.25em] text-white/60">
-                Flick Roulette
-              </p>
             </div>
           </div>
         </div>

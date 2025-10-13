@@ -4,7 +4,7 @@ const featureItems = [
   {
     title: "Cinematic Discovery",
     description:
-      "Swipe through mood-based collections and see fresh recommendations dialed in by Flicked’s discovery engine.",
+      "Swipe through mood-based collections and see fresh recommendations dialed in by GetFlicked’s discovery engine.",
     accent: "🎬",
   },
   {
@@ -38,9 +38,6 @@ export default function FeatureCards(): JSX.Element {
         <h2 className="text-4xl font-semibold tracking-tight text-white sm:text-5xl">
           The streaming companion you actually want to open.
         </h2>
-        <p className="mx-auto max-w-2xl text-base text-white/60">
-          Flicked is built to feel as cinematic as the stories you love—dark, sleek, and impossibly fast.
-        </p>
       </div>
       <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
         {featureItems.map((feature) => (
@@ -67,7 +64,7 @@ export default function FeatureCards(): JSX.Element {
             Watch like it’s premiere night, every night.
           </h3>
           <p className="text-base text-white/60">
-            Dive into lush detail pages that surface trailers, casts, similar titles, and rating breakdowns all in one place. Flicked makes choosing tonight’s entertainment feel as satisfying as pressing play.
+            Dive into lush detail pages that surface trailers, casts, similar titles, and rating breakdowns all in one place. GetFlicked makes choosing tonight’s entertainment feel as satisfying as pressing play.
           </p>
           <div className="flex flex-wrap gap-3 text-sm text-white/50">
             <span className="rounded-full border border-white/15 px-4 py-2">Interactive previews</span>
