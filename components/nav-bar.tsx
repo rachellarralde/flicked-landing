@@ -11,19 +11,13 @@ export default function NavBar({
       <div className="mx-auto flex w-full items-center justify-between rounded-full border border-white/10 bg-black/40 px-4 py-3 shadow-[0_18px_45px_-25px_rgba(0,0,0,0.9)] backdrop-blur-xl transition-colors duration-300">
         <Link className="flex items-center gap-3 text-lg font-semibold" href="/">
           <div className="relative h-10 w-10 overflow-hidden rounded-2xl border border-white/15 bg-white/10">
-            <Image src="/app-icon.png" alt="Flicked icon" fill className="object-cover" />
+            <Image src="/app-icon.png" alt="GetFlicked icon" fill className="object-cover" />
           </div>
           <span className="hidden text-sm uppercase tracking-[0.35em] text-white/70 sm:inline-flex">
-            Flicked
+            GetFlicked
           </span>
         </Link>
         <nav className="flex items-center gap-1 text-sm font-medium text-white/70">
-          <Link
-            className="rounded-full px-4 py-2 transition-colors duration-300 hover:text-white/100"
-            href="/"
-          >
-            Home
-          </Link>
           <button
             onClick={onContactClick}
             className="rounded-full px-4 py-2 transition-colors duration-300 hover:text-white"

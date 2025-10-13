@@ -10,7 +10,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Flicked",
+  title: "GetFlicked",
   description: "Find your next watch",
   icons: {
     icon: [
