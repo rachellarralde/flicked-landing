@@ -1,87 +1,51 @@
 import Link from "next/link";
 import Image from "next/image";
 
-// Assuming these are your icon components.
-function HomeIcon(props: React.SVGProps<SVGSVGElement>) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke="currentColor"
-      strokeWidth={2}
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="m3 9 9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"
-      />
-      <polyline points="9 22 9 12 15 12 15 22" />
-    </svg>
-  );
-}
-
-function ContactIcon(props: React.SVGProps<SVGSVGElement>) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke="currentColor"
-      strokeWidth={2}
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M17 18a2 2 0 00-2-2H9a2 2 0 00-2 2"
-      />
-      <rect width="18" height="18" x="3" y="4" rx="2" />
-      <circle cx="12" cy="10" r="2" />
-      <line x1="8" x2="8" y1="2" y2="4" />
-      <line x1="16" x2="16" y1="2" y2="4" />
-    </svg>
-  );
-}
-
 export default function NavBar({
   onContactClick,
 }: {
   onContactClick: () => void;
 }) {
   return (
-    <header className="w-full m-0 p-0">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-8">
-        <div className="flex items-center gap-4">
-          <Link
-            className="flex items-center gap-2 text-lg font-semibold"
-            href="/"
-          >
-            <Image
-              src="/app-icon.png"
-              alt="App Icon"
-              width={200}
-              height={200}
-            />
-            {/* <span className="sr-only">Home</span> */}
-          </Link>
-        </div>
-        <nav className="flex items-center gap-4">
-          {/* <Link
-            className="flex items-center gap-2 text-sm font-medium hover:underline"
-            href="/"
-          >
-            <HomeIcon className="h-4 w-4" />
-            Home
-          </Link> */}
+    <header className="sticky top-6 z-50 w-full">
+      <div className="mx-auto flex w-full items-center justify-between rounded-full border border-white/10 bg-black/40 px-4 py-3 shadow-[0_18px_45px_-25px_rgba(0,0,0,0.9)] backdrop-blur-xl transition-colors duration-300">
+        <Link className="flex items-center gap-3 text-lg font-semibold" href="/">
+          <div className="relative h-10 w-10 overflow-hidden rounded-2xl border border-white/15 bg-white/10">
+            <Image src="/app-icon.png" alt="GetFlicked icon" fill className="object-cover" />
+          </div>
+          <span className="hidden text-sm uppercase tracking-[0.35em] text-white/70 sm:inline-flex">
+            GetFlicked
+          </span>
+        </Link>
+        <nav className="flex items-center gap-1 text-sm font-medium text-white/70">
           <button
             onClick={onContactClick}
-            className="flex items-center gap-2 text-sm font-medium hover:underline"
+            className="rounded-full px-4 py-2 transition-colors duration-300 hover:text-white"
           >
-            <ContactIcon className="h-4 w-4" />
             Contact
           </button>
+          <Link
+            href="https://apps.apple.com/us/app/its-flicked/id6744044275"
+            className="group ml-2 inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-xs font-semibold uppercase tracking-wider text-black shadow-[0_10px_30px_rgba(0,0,0,0.45)] transition-transform duration-300 hover:-translate-y-0.5 hover:bg-white/90"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span>Download</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.8"
+              className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M5 12h14M13 6l6 6-6 6"
+              />
+            </svg>
+          </Link>
         </nav>
       </div>
     </header>

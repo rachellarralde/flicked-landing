@@ -10,7 +10,7 @@ const PrivacyPolicy = () => {
             1. We Do Not Collect Any Information
           </h2>
           <p>
-            Flicked is dedicated to providing movie and TV show content by
+            GetFlicked is dedicated to providing movie and TV show content by
             leveraging data from the movie database. We do not collect, store,
             or share any personal information from our users.
           </p>
@@ -51,7 +51,7 @@ const PrivacyPolicy = () => {
           </h2>
           <p>
             If you have any questions about this policy, please contact us at
-            witchaudiostudios@gmail.com
+            rachelldev@yahoo.com
           </p>
         </section>
 
