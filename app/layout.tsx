@@ -17,14 +17,11 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "GetFlicked — Your Next Obsession Awaits",
+  title: "GetFlicked",
   description:
     "AI-powered movie discovery. Swipe through cinematic picks, build gorgeous watchlists, and find where to stream anything — instantly.",
   icons: {
-    icon: [
-      { url: "/favicon.ico", sizes: "any" },
-      { url: "/app-icon.png", type: "image/png", sizes: "192x192" },
-    ],
+    icon: [{ url: "/app-icon.png", type: "image/png" }],
     apple: { url: "/app-icon.png", type: "image/png" },
   },
 };
