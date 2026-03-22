@@ -1,53 +1,87 @@
+import Link from "next/link";
+
 export default function Contact() {
   return (
-    <footer className="relative overflow-hidden rounded-[2.5rem] border border-white/10 bg-gradient-to-br from-white/10 via-black/60 to-black/80 px-8 py-16 shadow-[0_40px_120px_-60px_rgba(0,0,0,0.9)]">
-      <div className="absolute -right-24 -top-24 h-72 w-72 rounded-full bg-[radial-gradient(circle_at_center,rgba(255,78,80,0.35),transparent_65%)] blur-3xl" />
-      <div className="absolute -left-20 bottom-0 h-80 w-80 rounded-full bg-[radial-gradient(circle_at_center,rgba(113,89,255,0.3),transparent_60%)] blur-3xl" />
-      <div className="relative grid gap-12 lg:grid-cols-[minmax(0,1fr)_1fr]">
-        <div className="space-y-6">
-          <p className="text-xs uppercase tracking-[0.35em] text-white/40">Stay in the loop</p>
-          <h3 className="text-3xl font-semibold text-white sm:text-4xl">Let&apos;s create your next binge-worthy night.</h3>
-          <p className="max-w-lg text-base text-white/60">
-            GetFlicked is crafted by an indie developer who reads every note. Spot an issue or dreaming up the next feature? Send it to{" "}
-            <a
-              className="border-b border-dashed border-white/30 text-white/80 transition-colors hover:text-white"
-              href="mailto:rachelldev@yahoo.com"
-            >
-              rachelldev@yahoo.com
-            </a>
-            {" "}
-            and you&apos;ll hear back soon.
-          </p>
-          <div className="flex flex-wrap gap-3 text-sm text-white/50">
-            <span className="rounded-full border border-white/15 px-4 py-2">Made for iPhone</span>
-            <span className="rounded-full border border-white/15 px-4 py-2">Built by film fanatics</span>
-            <span className="rounded-full border border-white/15 px-4 py-2">Privacy-first</span>
+    <footer className="relative overflow-hidden bg-[#0D0B09]">
+      {/* Separator */}
+      <div className="mx-auto h-px max-w-7xl bg-gradient-to-r from-transparent via-[#F2E8D5]/[0.07] to-transparent" />
+
+      {/* Big CTA block */}
+      <div className="relative overflow-hidden bg-[#E8003D] px-6 py-20 sm:px-10 sm:py-28">
+        {/* Decorative bg text */}
+        <span
+          aria-hidden
+          className="pointer-events-none absolute -right-8 top-1/2 -translate-y-[48%] select-none font-display text-[20vw] leading-none text-[#FF1A52]/40"
+        >
+          FLICKED
+        </span>
+        {/* Subtle grain on red block */}
+        <div
+          className="pointer-events-none absolute inset-0 opacity-[0.04]"
+          style={{
+            backgroundImage:
+              "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E\")",
+            backgroundRepeat: "repeat",
+            backgroundSize: "160px 160px",
+          }}
+        />
+
+        <div className="relative z-10 mx-auto max-w-7xl">
+          <div className="grid gap-12 lg:grid-cols-[1.6fr_1fr] lg:items-end">
+            {/* Headline */}
+            <div>
+              <h2 className="font-display leading-[0.88] tracking-wide text-white">
+                <span className="block text-[clamp(4.5rem,12vw,11rem)]">READY</span>
+                <span className="block text-[clamp(4.5rem,12vw,11rem)]">TO WATCH?</span>
+              </h2>
+            </div>
+
+            {/* Right col: copy + buttons */}
+            <div className="space-y-6 lg:pb-3">
+              <p className="text-base font-light leading-relaxed text-white/65">
+                GetFlicked is crafted by an indie developer who reads every note.
+                Download the app or send feedback &mdash; you&apos;ll hear back.
+              </p>
+
+              <div className="flex flex-col gap-3 sm:flex-row">
+                <Link
+                  href="https://apps.apple.com/us/app/its-flicked/id6744044275"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center rounded-full bg-white px-7 py-4 text-sm font-semibold text-[#E8003D] transition-all duration-250 hover:bg-white/92 hover:shadow-[0_0_36px_rgba(255,255,255,0.25)]"
+                >
+                  Download GetFlicked
+                </Link>
+                <a
+                  href="mailto:rachelldev@yahoo.com"
+                  className="inline-flex items-center justify-center rounded-full border border-white/30 px-7 py-4 text-sm font-semibold text-white transition-all duration-250 hover:border-white/55 hover:bg-white/10"
+                >
+                  Contact the dev
+                </a>
+              </div>
+            </div>
           </div>
         </div>
-        <div className="space-y-6 rounded-3xl border border-white/10 bg-black/60 p-8">
-          <h4 className="text-xl font-semibold text-white">Download &amp; Privacy</h4>
-          <p className="text-sm text-white/60">
-            Ready to queue up your next obsession? Grab GetFlicked on the App Store and review our privacy policy to see how we keep your data safe.
-          </p>
-          <div className="flex flex-wrap items-center gap-4">
-            <a
-              href="https://apps.apple.com/us/app/its-flicked/id6744044275"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center rounded-full border border-white/20 bg-white/10 px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-white/20"
-            >
-              Download GetFlicked
-            </a>
-            <a
-              href="/privacy-policy"
-              className="inline-flex items-center justify-center rounded-full border border-white/20 px-6 py-3 text-sm font-medium text-white/70 transition-colors hover:border-white/40 hover:text-white"
-            >
-              Privacy Policy
-            </a>
-          </div>
-          <p className="text-xs text-white/30">
-            © {new Date().getFullYear()} RachellDev. All rights reserved.
-          </p>
+      </div>
+
+      {/* Footer bar */}
+      <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 px-6 py-6 sm:px-10">
+        <p className="text-xs text-[#786E62]">
+          © {new Date().getFullYear()} RachellDev. All rights reserved.
+        </p>
+        <div className="flex items-center gap-6">
+          <a
+            href="mailto:rachelldev@yahoo.com"
+            className="text-xs text-[#786E62] transition-colors hover:text-[#F2E8D5]"
+          >
+            rachelldev@yahoo.com
+          </a>
+          <Link
+            href="/privacy-policy"
+            className="text-xs text-[#786E62] transition-colors hover:text-[#F2E8D5]"
+          >
+            Privacy Policy
+          </Link>
         </div>
       </div>
     </footer>

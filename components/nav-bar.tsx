@@ -1,43 +1,67 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
+import { useState, useEffect } from "react";
 
 export default function NavBar({
   onContactClick,
 }: {
   onContactClick: () => void;
 }) {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 48);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <header className="sticky top-6 z-50 w-full">
-      <div className="mx-auto flex w-full items-center justify-between rounded-full border border-white/10 bg-black/40 px-4 py-3 shadow-[0_18px_45px_-25px_rgba(0,0,0,0.9)] backdrop-blur-xl transition-colors duration-300">
-        <Link className="flex items-center gap-3 text-lg font-semibold" href="/">
-          <div className="relative h-10 w-10 overflow-hidden rounded-2xl border border-white/15 bg-white/10">
-            <Image src="/app-icon.png" alt="GetFlicked icon" fill className="object-cover" />
+    <header
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
+        scrolled
+          ? "border-b border-white/[0.05] bg-[#0D0B09]/88 backdrop-blur-xl"
+          : "bg-transparent"
+      }`}
+    >
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 sm:px-10">
+        {/* Logo */}
+        <Link href="/" className="group flex items-center gap-3">
+          <div className="relative h-9 w-9 overflow-hidden rounded-xl border border-white/10">
+            <Image
+              src="/app-icon.png"
+              alt="GetFlicked"
+              fill
+              className="object-cover"
+            />
           </div>
-          <span className="hidden text-sm uppercase tracking-[0.35em] text-white/70 sm:inline-flex">
+          <span className="font-display text-[1.15rem] tracking-[0.12em] text-[#F2E8D5] transition-colors group-hover:text-white">
             GetFlicked
           </span>
         </Link>
-        <nav className="flex items-center gap-1 text-sm font-medium text-white/70">
+
+        {/* Nav */}
+        <nav className="flex items-center gap-1">
           <button
             onClick={onContactClick}
-            className="rounded-full px-4 py-2 transition-colors duration-300 hover:text-white"
+            className="px-4 py-2 text-sm font-medium text-[#786E62] transition-colors duration-200 hover:text-[#F2E8D5]"
           >
             Contact
           </button>
           <Link
             href="https://apps.apple.com/us/app/its-flicked/id6744044275"
-            className="group ml-2 inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-xs font-semibold uppercase tracking-wider text-black shadow-[0_10px_30px_rgba(0,0,0,0.45)] transition-transform duration-300 hover:-translate-y-0.5 hover:bg-white/90"
             target="_blank"
             rel="noopener noreferrer"
+            className="group ml-2 inline-flex items-center gap-2 rounded-full bg-[#E8003D] px-5 py-2.5 text-sm font-semibold text-white transition-all duration-300 hover:bg-[#FF1040] hover:shadow-[0_0_28px_rgba(232,0,61,0.5)]"
           >
-            <span>Download</span>
+            Download
             <svg
-              xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
-              strokeWidth="1.8"
-              className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5"
+              strokeWidth="2"
+              className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5"
             >
               <path
                 strokeLinecap="round"

@@ -1,92 +1,204 @@
 import Link from "next/link";
 import Image from "next/image";
 
-const featureBullets = [
-  "AI-tuned picks that feel handpicked for you",
-  "Watchlists that sync across every device",
-  "Instantly see where to stream, rent, or buy",
+const genres = [
+  "DRAMA",
+  "THRILLER",
+  "HORROR",
+  "COMEDY",
+  "SCI-FI",
+  "ROMANCE",
+  "ACTION",
+  "NOIR",
+  "DOCUMENTARY",
+  "WESTERN",
+  "ANIMATION",
+  "CRIME",
 ];
+
+// Phone mockup shell: wraps a screenshot in a phone-shaped container
+function PhoneMockup({
+  src,
+  alt,
+  className = "",
+  priority = false,
+}: {
+  src: string;
+  alt: string;
+  className?: string;
+  priority?: boolean;
+}) {
+  return (
+    <div
+      className={`relative overflow-hidden rounded-[2.6rem] border border-white/[0.1] bg-[#0D0B09] shadow-[0_60px_120px_-20px_rgba(0,0,0,0.9),inset_0_0_0_1px_rgba(255,255,255,0.04)] ${className}`}
+    >
+      <Image
+        src={src}
+        alt={alt}
+        width={390}
+        height={844}
+        className="w-full object-cover"
+        priority={priority}
+      />
+    </div>
+  );
+}
 
 export default function Hero() {
   return (
-    <section className="relative mt-16 rounded-[3rem] border border-white/10 bg-white/5 px-6 py-16 shadow-[0_25px_80px_-40px_rgba(15,0,60,0.9)] sm:px-10 lg:px-16">
-      <div className="absolute inset-0 -z-10 overflow-hidden rounded-[3rem]">
-        <div className="absolute -top-1/3 right-0 h-[32rem] w-[32rem] -translate-y-10 translate-x-10 rounded-full bg-[radial-gradient(circle_at_top_right,rgba(107,76,255,0.5),transparent_60%)] blur-3xl" />
-        <div className="absolute -bottom-1/4 left-10 h-[26rem] w-[26rem] rounded-full bg-[radial-gradient(circle_at_bottom_left,rgba(255,78,80,0.45),transparent_55%)] blur-3xl" />
-      </div>
-      <div className="grid gap-16 lg:grid-cols-[1.1fr_minmax(0,1fr)]">
-        <div className="space-y-8">
-          <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-black/40 px-4 py-1 text-xs font-semibold uppercase tracking-[0.25em] text-white/70">
-            New on iOS
+    <section className="relative min-h-screen pt-24 pb-0">
+      {/* Background glows */}
+      <div className="pointer-events-none absolute -top-20 right-0 h-[800px] w-[800px] rounded-full bg-[radial-gradient(circle_at_top_right,rgba(232,0,61,0.09),transparent_55%)] blur-3xl" />
+      <div className="pointer-events-none absolute bottom-40 -left-20 h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle,rgba(201,150,74,0.06),transparent_65%)] blur-3xl" />
+
+      <div className="mx-auto max-w-7xl px-6 sm:px-10">
+        {/* Badge */}
+        <div className="fade-up mb-10 flex items-center gap-3">
+          <span className="flicker h-1.5 w-1.5 rounded-full bg-[#E8003D]" />
+          <span className="text-[0.68rem] font-medium uppercase tracking-[0.4em] text-[#786E62]">
+            Now on iOS
           </span>
-          <h1 className="text-4xl font-semibold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
-            Your next obsession is a tap away.
-          </h1>
-          <p className="max-w-xl text-base text-white/70 sm:text-lg">
-            GetFlicked cuts through endless catalogs with a sleek experience. Swipe through cinematic recommendations, build gorgeous playlists, and dive in instantly.
-          </p>
-          <ul className="grid gap-3 text-sm text-white/60 sm:text-base">
-            {featureBullets.map((bullet) => (
-              <li key={bullet} className="flex items-start gap-3">
-                <span className="mt-1 inline-flex h-5 w-5 items-center justify-center rounded-full bg-white/10 text-xs text-white">
-                  •
-                </span>
-                <span>{bullet}</span>
-              </li>
-            ))}
-          </ul>
-          <div className="flex flex-wrap items-center gap-4 pt-2">
-            <Link
-              className="group relative inline-flex h-14 items-center gap-4 overflow-hidden rounded-full border border-white/15 bg-white/95 px-6 text-base font-semibold text-black shadow-[0_20px_50px_-30px_rgba(0,0,0,1)] transition-transform duration-300 hover:-translate-y-0.5 hover:bg-white"
-              href="https://apps.apple.com/us/app/its-flicked/id6744044275"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <span
-                aria-hidden
-                className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(122,98,255,0.28),transparent_65%)] opacity-70 transition-opacity duration-500 group-hover:opacity-100"
-              />
-              <span
-                aria-hidden
-                className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,rgba(255,78,80,0.2),transparent_60%)] opacity-0 transition-opacity duration-500 group-hover:opacity-80"
-              />
-              <div className="relative z-10 flex items-center gap-3">
-                <div className="relative h-9 w-9 overflow-hidden rounded-2xl bg-black/80">
-                  <Image src="/app-icon.png" alt="GetFlicked icon" fill className="object-cover" />
-                </div>
-                <span>Download on the App Store</span>
-              </div>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.8"
-                className="relative z-10 h-5 w-5 text-black/70 transition-transform duration-300 group-hover:translate-x-1"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M13 6l6 6-6 6" />
-              </svg>
-            </Link>
-            <p className="text-xs uppercase tracking-[0.35em] text-white/50">
-              No ads. Ever.
-            </p>
-          </div>
         </div>
-        <div className="relative mx-auto flex max-w-[32rem] items-center justify-center lg:max-w-[36rem]">
-          <div className="absolute inset-0 rounded-[3.25rem] border border-white/10 bg-white/5 blur-xl" />
-          <div className="relative w-full overflow-hidden rounded-[2.75rem] border border-white/15 bg-black/70 p-6 shadow-[0_55px_90px_-45px_rgba(0,0,0,0.85)]">
-            <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-black/40">
-              <Image
-                src="/hero-image.png"
-                alt="GetFlicked app preview"
-                width={900}
-                height={1200}
-                className="h-full w-full object-cover"
-                priority
-              />
-              <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
+
+        {/* Main grid */}
+        <div className="grid items-start gap-16 lg:grid-cols-[1fr_1fr] lg:gap-8">
+          {/* Left: Editorial headline + copy */}
+          <div>
+            <div className="fade-up delay-100">
+              <h1 className="font-display leading-[0.88] tracking-wide">
+                <span className="block text-[clamp(4rem,11vw,11rem)] text-[#F2E8D5]">
+                  YOUR
+                </span>
+                <span className="block text-[clamp(4rem,11vw,11rem)] text-[#F2E8D5]">
+                  NEXT
+                </span>
+                <span className="block text-[clamp(4rem,11vw,11rem)] text-[#E8003D]">
+                  OBSESSION
+                </span>
+                <span className="block text-[clamp(2rem,5vw,5.5rem)] text-[#F2E8D5]/55">
+                  IS ONE TAP AWAY.
+                </span>
+              </h1>
+            </div>
+
+            <p className="fade-up delay-200 mt-8 max-w-[42ch] text-[0.95rem] font-light leading-relaxed text-[#786E62] sm:text-base">
+              GetFlicked cuts through endless catalogs — swipe cinematic
+              recommendations, build gorgeous watchlists, and dive in the moment
+              you decide.
+            </p>
+
+            <div className="fade-up delay-300 mt-6 flex flex-wrap gap-2">
+              {["AI-tuned picks", "Cross-device sync", "Streaming radar"].map(
+                (pill) => (
+                  <span
+                    key={pill}
+                    className="rounded-full border border-[#F2E8D5]/10 px-4 py-1.5 text-xs font-medium text-[#786E62]"
+                  >
+                    {pill}
+                  </span>
+                )
+              )}
+            </div>
+
+            <div className="fade-up delay-400 mt-8 flex flex-wrap items-center gap-5">
+              <Link
+                href="https://apps.apple.com/us/app/its-flicked/id6744044275"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center gap-3 rounded-full bg-[#F2E8D5] px-6 py-3.5 text-sm font-semibold text-[#0D0B09] transition-all duration-300 hover:bg-white hover:shadow-[0_0_45px_rgba(242,232,213,0.2)]"
+              >
+                <div className="relative h-7 w-7 overflow-hidden rounded-lg">
+                  <Image
+                    src="/app-icon.png"
+                    alt=""
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                Download on the App Store
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M5 12h14M13 6l6 6-6 6"
+                  />
+                </svg>
+              </Link>
+              <span className="text-[0.68rem] font-medium uppercase tracking-[0.3em] text-[#786E62]/55">
+                No ads. Ever.
+              </span>
             </div>
           </div>
+
+          {/* Right: 3-phone arrangement */}
+          <div className="relative flex h-[520px] items-end justify-center lg:h-[680px]">
+            {/* Red glow beneath center phone */}
+            <div className="absolute bottom-0 left-1/2 h-[300px] w-[300px] -translate-x-1/2 rounded-full bg-[radial-gradient(ellipse_at_bottom,rgba(232,0,61,0.28),transparent_70%)] blur-3xl" />
+
+            {/* Left phone — tilted left, slightly behind */}
+            <div
+              className="absolute bottom-4 left-0 z-10 w-[32%] origin-bottom"
+              style={{ transform: "rotate(-8deg) translateX(-8%)" }}
+            >
+              <PhoneMockup
+                src="/screen-movies.png"
+                alt="Discover Movies screen"
+              />
+            </div>
+
+            {/* Center phone — upright, front and tallest */}
+            <div className="phone-float relative z-20 w-[38%]">
+              <PhoneMockup
+                src="/screen-detail.png"
+                alt="Movie detail screen"
+                priority
+              />
+            </div>
+
+            {/* Right phone — tilted right, slightly behind */}
+            <div
+              className="absolute bottom-4 right-0 z-10 w-[32%] origin-bottom"
+              style={{ transform: "rotate(8deg) translateX(8%)" }}
+            >
+              <PhoneMockup
+                src="/screen-roulette.png"
+                alt="Content Roulette screen"
+              />
+            </div>
+
+            {/* Floating stat badge */}
+            <div className="absolute -bottom-2 left-1/2 z-30 flex -translate-x-1/2 items-center gap-3 rounded-2xl border border-white/[0.08] bg-[#1D1915] px-5 py-3 shadow-xl lg:-left-8 lg:bottom-16 lg:translate-x-0">
+              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#E8003D]/15">
+                <span className="text-sm leading-none text-[#E8003D]">★</span>
+              </div>
+              <div>
+                <p className="text-sm font-semibold text-[#F2E8D5]">
+                  50K+ downloads
+                </p>
+                <p className="text-xs text-[#786E62]">App Store</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Genre ticker strip */}
+      <div className="relative mt-24 overflow-hidden border-y border-[#F2E8D5]/[0.05] bg-[#161210] py-4">
+        <div className="marquee-track flex w-max items-center">
+          {[...genres, ...genres].map((genre, i) => (
+            <span key={i} className="inline-flex items-center">
+              <span className="whitespace-nowrap px-5 font-display text-xl tracking-[0.25em] text-[#786E62]">
+                {genre}
+              </span>
+              <span className="text-[#E8003D]/50 text-sm">●</span>
+            </span>
+          ))}
         </div>
       </div>
     </section>
