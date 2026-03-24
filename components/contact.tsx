@@ -53,7 +53,7 @@ export default function Contact() {
                   Download GetFlicked
                 </Link>
                 <a
-                  href="mailto:rachelldev@yahoo.com"
+                  href="mailto:witchaudiostudios@gmail.com"
                   className="inline-flex items-center justify-center rounded-full border border-white/30 px-7 py-4 text-sm font-semibold text-white transition-all duration-250 hover:border-white/55 hover:bg-white/10"
                 >
                   Contact the dev
@@ -67,14 +67,14 @@ export default function Contact() {
       {/* Footer bar */}
       <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 px-6 py-6 sm:px-10">
         <p className="text-xs text-[#786E62]">
-          © {new Date().getFullYear()} RachellDev. All rights reserved.
+          © 2026 witchaudio. All rights reserved.
         </p>
         <div className="flex items-center gap-6">
           <a
-            href="mailto:rachelldev@yahoo.com"
+            href="mailto:witchaudiostudios@gmail.com"
             className="text-xs text-[#786E62] transition-colors hover:text-[#F2E8D5]"
           >
-            rachelldev@yahoo.com
+            witchaudiostudios@gmail.com
           </a>
           <Link
             href="/privacy-policy"
